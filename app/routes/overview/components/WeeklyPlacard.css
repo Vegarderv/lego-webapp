@@ -1,0 +1,112 @@
+@import '~app/styles/variables.css';
+
+.container {
+  width: 100%;
+}
+
+.description {
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+  line-height: 1.2em;
+  margin: 0px 0px 25px 0px;
+}
+
+.logoAndMug {
+  position: relative;
+  margin-top: 17px;
+  transform: scale(0.9);
+}
+
+.logo {
+  margin-top: 12px;
+  width: 200px;
+  filter: drop-shadow(0px 4px 1.5px rgba(0, 0, 0, 20%));
+}
+
+.mug {
+  position: relative;
+}
+
+.mug div {
+  position: absolute;
+
+  /* Half of image height */
+  /* top: 27.5px; 
+  left: 27.5px; */
+
+  top: 5px;
+  left: 20.75px;
+
+  color: #ffe8cc;
+
+  font-size: 26px;
+
+  /* transform: translate(-50%, -50%); */
+}
+
+.mug img {
+  height: 55px;
+  filter: drop-shadow(0px 4px 1.5px rgba(0, 0, 0, 20%));
+
+  transition: transform 2s linear;
+  transform: rotate(0deg);
+}
+
+@keyframes mugKnock {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.logoAndMug:hover .mug {
+  animation: mugKnock 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 normal;
+}
+
+@keyframes numberKnock {
+  0% {
+    transform: rotate(0deg);
+  }
+  12.5% {
+    transform: rotate(15deg);
+  }
+  /* 50% {
+    transform: rotate(0deg);
+  } */
+  37.5% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.logoAndMug:hover .mug div {
+  animation: numberKnock 1.5s linear 0s 1 normal;
+}
+
+.newTag {
+  position: absolute;
+  bottom: 0px;
+  right: -7px;
+
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  line-height: 1em;
+
+  background-color: var('--lego-red');
+
+  padding: 3px 5px;
+
+  border-radius: 3px;
+}
